@@ -9,7 +9,7 @@
 
 # What is `docker-hexo`?
 
-![docker-hexo](https://git.dsme.cc/taskbjorn/docker-hexo/src/commit/b1c10ac63bdf0cd894ad73e18861dfb2196d09e2/docker-hexo.png)
+![docker-hexo](docker-hexo.png)
 
 `docker-hexo` is a Docker container for the Hexo blog framework based on Alpine Linux.
 
