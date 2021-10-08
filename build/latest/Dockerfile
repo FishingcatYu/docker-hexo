@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # Install required dependencies
-RUN apk add --update --no-cache git nodejs npm
+RUN apk add --update --no-cache git nodejs npm openssh-client
 
 # Install Hexo command line interface
 RUN npm config set unsafe-perm true && \
