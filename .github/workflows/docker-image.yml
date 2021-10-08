@@ -21,8 +21,10 @@ jobs:
           # 指定镜像名称
           image_name: hexo-docker
           # 指定镜像标签
-          tag: latest
+          tag: latest 
       run: |
+         cd build
+         cd latest
          docker build . --file Dockerfile --tag $docker_repo/$image_name:$tag
          docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} $docker_repo
          docker push $docker_repo/$image_name:$tag
