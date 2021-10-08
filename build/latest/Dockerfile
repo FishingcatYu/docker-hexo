@@ -17,6 +17,6 @@ USER hexo
 WORKDIR /home/hexo/.hexo
 COPY hexo-entrypoint.sh /home/hexo/.docker/hexo-entrypoint.sh
 
-RUN chmod -x /home/hexo/.docker/hexo-entrypoint.sh
+RUN ["chmod", "-x", "/home/hexo/.docker/hexo-entrypoint.sh"]
 
 ENTRYPOINT ["/bin/sh", "-c", "/home/hexo/.docker/hexo-entrypoint.sh"]
