@@ -15,5 +15,5 @@ RUN addgroup -S hexo -g 1000 && \
 # Copy and run entrypoint script
 USER hexo
 WORKDIR /home/hexo/.hexo
-COPY hexo-entrypoint.sh /home/hexo/.docker/hexo.sh
+COPY hexo.sh /home/hexo/.docker/hexo.sh
 ENTRYPOINT ["/bin/sh", "-c", "/home/hexo/.docker/hexo.sh"]
