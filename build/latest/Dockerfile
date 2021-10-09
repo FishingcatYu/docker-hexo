@@ -16,4 +16,7 @@ RUN addgroup -S hexo -g 1000 && \
 USER hexo
 WORKDIR /home/hexo/.hexo
 COPY hexo.sh /home/hexo/.docker/hexo.sh
+
+RUN ["chmod", "-x", "/home/hexo/.docker/hexo.sh"]
+
 ENTRYPOINT ["/bin/sh", "-c", "/home/hexo/.docker/hexo.sh"]
