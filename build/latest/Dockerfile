@@ -1,7 +1,7 @@
-FROM alpine:latest
+FROM node:latest-alpine
 
 # Install required dependencies
-RUN apk add --update --no-cache git nodejs yarn openssh-client
+RUN apk add --update --no-cache git openssh-client
 # Install Hexo command line interface
 RUN yarn config set unsafe-perm true && \
     yarn 
