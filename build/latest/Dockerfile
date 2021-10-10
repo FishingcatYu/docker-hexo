@@ -14,4 +14,4 @@ USER node
 WORKDIR /home/hexo/.hexo
 COPY hexo.sh /home/hexo/.docker/hexo.sh
 ENTRYPOINT ["/bin/sh", "-c", "/home/hexo/.docker/hexo.sh"]
-ENTRYPOINT ["rm", "-f", "/home/hexo/.docker"]
+ENTRYPOINT ["rm", "-rf", "/home/hexo/.docker"]
