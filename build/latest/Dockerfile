@@ -1,10 +1,11 @@
 FROM alpine:latest
 
 # Install required dependencies
-RUN apk add --update --no-cache git nodejs npm openssh-client
+RUN apk add --update --no-cache git nodejs yarn openssh-client
 # Install Hexo command line interface
-RUN npm config set unsafe-perm true && \
-    npm install hexo-cli hexo-server -g --loglevel=error
+RUN yarn config set unsafe-perm true && \
+    yarn 
+    yarn add hexo-cli hexo-server -g --loglevel=error
 
 RUN addgroup -S hexo -g 1000 && \
     adduser -S hexo -g '' -u 1000 -G hexo && \
