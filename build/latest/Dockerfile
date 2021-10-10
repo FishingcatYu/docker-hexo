@@ -6,13 +6,11 @@ RUN apk add --update --no-cache git openssh-client
 RUN yarn config set unsafe-perm true && \ 
     yarn add hexo-cli hexo-server -g --loglevel=error
 
-RUN addgroup -S hexo -g 1000 && \
-    adduser -S hexo -g '' -u 1000 -G hexo && \
-    mkdir -p /home/hexo/.hexo && \
-    chown hexo:hexo /home/hexo/.hexo
+RUN mkdir -p /home/hexo/.hexo && \
+    chown node:node /home/hexo/.hexo
 
 # Copy and run entrypoint script
-USER hexo
+USER node
 WORKDIR /home/hexo/.hexo
 COPY hexo.sh /home/hexo/.docker/hexo.sh
 ENTRYPOINT ["/bin/sh", "-c", "/home/hexo/.docker/hexo.sh"]
