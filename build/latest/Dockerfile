@@ -1,4 +1,4 @@
-FROM node:latest-alpine
+FROM node:lts-alpine
 
 # Install required dependencies
 RUN apk add --update --no-cache git openssh-client
