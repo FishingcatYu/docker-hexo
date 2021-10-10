@@ -4,7 +4,7 @@ FROM node:lts-alpine
 RUN apk add --update --no-cache git openssh-client
 # Install Hexo command line interface
 RUN yarn config set unsafe-perm true && \ 
-    yarn add hexo-cli hexo-server -g --loglevel=error
+    yarn global add hexo-cli hexo-server -g --loglevel=error
 
 RUN mkdir -p /home/hexo/.hexo && \
     chown node:node /home/hexo/.hexo
