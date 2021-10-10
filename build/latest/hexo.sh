@@ -11,4 +11,3 @@ fi
 hexo clean
 hexo g
 hexo s
-rm -rf /home/hexo/.docker/hexo.sh
