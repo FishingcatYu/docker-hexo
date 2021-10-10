@@ -5,6 +5,7 @@ if [ -z "$(ls)" ]; then
 	hexo init ./
 	yarn add hexo-deployer-git --save
 	cp /home/hexo/.docker/package.json /home/hexo/.hexo/package.json
+	yarn install
 fi
 
 # Populate arguments based on environment variables
