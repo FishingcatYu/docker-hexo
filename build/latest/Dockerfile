@@ -4,8 +4,8 @@ FROM alpine:latest
 RUN apk add --update --no-cache git nodejs yarn openssh-client
 # Install Hexo command line interface
 RUN yarn config set unsafe-perm true && \ 
-    yarn add hexo-cli  && \
-    yarn add hexo-server
+    yarn global add hexo-cli  && \
+    yarn global add hexo-server
 
 RUN addgroup -S hexo -g 1000 && \
     adduser -S hexo -g '' -u 1000 -G hexo && \
