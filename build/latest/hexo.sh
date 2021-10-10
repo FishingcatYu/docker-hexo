@@ -9,5 +9,5 @@ fi
 
 # Populate arguments based on environment variables
 hexo clean
-hexo generate
-hexo server -i -s
+hexo g
+hexo s
