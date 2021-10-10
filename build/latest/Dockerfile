@@ -1,16 +1,18 @@
-FROM node:lts-alpine
+FROM alpine:latest
 
 # Install required dependencies
-RUN apk add --update --no-cache git openssh-client
+RUN apk add --update --no-cache git nodejs yarn openssh-client
 # Install Hexo command line interface
 RUN yarn config set unsafe-perm true && \ 
     yarn global add hexo-cli hexo-server -g --loglevel=error
 
-RUN mkdir -p /home/hexo/.hexo && \
-    chown node:node /home/hexo/.hexo
+RUN addgroup -S hexo -g 1000 && \
+    adduser -S hexo -g '' -u 1000 -G hexo && \
+    mkdir -p /home/hexo/.hexo && \
+    chown hexo:hexo /home/hexo/.hexo
 
 # Copy and run entrypoint script
-USER node
+USER hexo
 WORKDIR /home/hexo/.hexo
 COPY hexo.sh /home/hexo/.docker/hexo.sh
 ENTRYPOINT ["/bin/sh", "-c", "/home/hexo/.docker/hexo.sh"]
