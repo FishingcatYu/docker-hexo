@@ -11,4 +11,4 @@ fi
 # Populate arguments based on environment variables
 hexo cl
 hexo g
-hexo s
+hexo s -i -s
