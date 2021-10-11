@@ -18,7 +18,7 @@ jobs:
           # 指定镜像名称
           image_name: hexo-docker
           # 指定镜像标签
-          tag: v1.5
+          tag: v1.6
       run: |
          cd build
          cd latest
